@@ -21,4 +21,4 @@ if [ ! -f /vuls/data/cve.sqlite3 ]; then
     goval-dictionary fetch-amazon -dbpath=/vuls/data/oval.sqlite3; 
 fi
 
-/bin/sh -c vuls server -listen=localhost:80
+vuls server -listen=localhost:80

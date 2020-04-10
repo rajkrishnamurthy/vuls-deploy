@@ -1,0 +1,6 @@
+[submodule "src/vuls/go-cve-dictionary"]
+	path = src/vuls/go-cve-dictionary
+	url = https://github.com/kotakanbe/go-cve-dictionary
+[submodule "src/go-exploitdb"]
+	path = src/go-exploitdb
+	url = https://github.com/vulsio/go-exploitdb

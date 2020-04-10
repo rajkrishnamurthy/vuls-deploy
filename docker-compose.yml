@@ -1,0 +1,36 @@
+version: "3.4"
+services:
+  vuls:
+    build:
+      context: src/vuls
+      dockerfile: ../../Dockerfiles/Dockerfile
+      args:
+        buildno: 1
+    image: vuls:latest
+    env_file:
+     - ./etc/docker.env
+    hostname: vuls
+    container_name: vuls
+    ports:
+      - 80/tcp
+    command: ["/bin/sh","-c","/vuls/start.sh"]
+    volumes:
+      - ${HOME}/tmp/vuls/data:/vuls/data
+    restart: always
+    networks:
+      internal:
+        aliases:
+          - vuls
+      default:
+        aliases:
+          - vuls
+volumes:
+  cli:
+networks:
+  default:
+    external:
+       name: vuls_default
+  internal:
+    external:
+      name: vuls_internal
+
